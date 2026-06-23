@@ -1,8 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './FAQAndFooter.css';
 
 export default function FAQAndFooter() {
   const [openFAQ, setOpenFAQ] = useState({});
+  const [faqs, setFaqs] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const fetchFaqs = async () => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=5');
+      if (!res.ok) throw new Error('Failed to fetch FAQs');
+      const data = await res.json();
+      const mappedFaqs = data.map((post) => ({
+        question: post.title.charAt(0).toUpperCase() + post.title.slice(1) + "?",
+        answer: post.body.charAt(0).toUpperCase() + post.body.slice(1) + "."
+      }));
+      setFaqs(mappedFaqs);
+    } catch (err) {
+      setError(err.message || 'Something went wrong');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchFaqs();
+  }, []);
 
   const toggleFAQ = (idx) => {
     setOpenFAQ(prev => ({
@@ -10,29 +36,6 @@ export default function FAQAndFooter() {
       [idx]: !prev[idx]
     }));
   };
-
-  const faqs = [
-    {
-      question: "What are Aligners?",
-      answer: "Aligners are medical-grade, transparent plastic trays custom-designed to sit comfortably over your teeth and apply gentle forces to move them into their ideal positions secretly."
-    },
-    {
-      question: "How do Aligners work?",
-      answer: "By wearing a series of custom trays, each slightly different from the last, your teeth are gradually guided to move. You shift to a new set every 10 days until treatment is complete."
-    },
-    {
-      question: "Can any dentist do irregular teeth treatment?",
-      answer: "While general dentists can offer basic checks, clear aligners require specialized planning. At Whistle, all treatment plans are designed and monitored by certified expert Orthodontists."
-    },
-    {
-      question: "Are there any restriction on eating or drinking?",
-      answer: "No! Unlike traditional braces, aligners are fully removable. You can take them out to enjoy your favorite foods and drinks, and simply brush before putting them back in."
-    },
-    {
-      question: "How long does the treatment take?",
-      answer: "Treatment duration varies based on complexity, typically ranging between 4 to 8 months. Our expert orthodontists design your plan to ensure the fastest, safest route to your perfect smile."
-    }
-  ];
 
   return (
     <footer className="whistle-footer-wrapper">
@@ -44,7 +47,27 @@ export default function FAQAndFooter() {
         </h2>
         
         <div className="faq-accordion-list">
-          {faqs.map((faq, idx) => {
+          {isLoading && (
+            <div className="faq-skeleton-list">
+              {[1, 2, 3, 4, 5].map((n) => (
+                <div key={n} className="faq-skeleton-row">
+                  <div className="skeleton-line skeleton-title"></div>
+                  <div className="skeleton-badge"></div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {error && (
+            <div className="faq-error-container">
+              <p className="faq-error-text">Oops! Unable to load FAQs. Please check your connection.</p>
+              <button type="button" onClick={fetchFaqs} className="faq-retry-btn">
+                Retry
+              </button>
+            </div>
+          )}
+
+          {!isLoading && !error && faqs.map((faq, idx) => {
             const isOpen = !!openFAQ[idx];
             return (
               <div key={idx} className={`faq-row-group ${isOpen ? 'faq-expanded' : ''}`}>

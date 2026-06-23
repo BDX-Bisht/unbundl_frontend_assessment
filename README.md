@@ -1,16 +1,59 @@
-# React + Vite
+# Whistle - Invisible Dental Aligners Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the frontend implementation of the Whistle dental aligners landing page, built as a responsive, pixel-perfect React application matching the Figma design.
 
-Currently, two official plugins are available:
+## Approach Note
+Our approach focused on building a modular React component architecture styled with vanilla CSS variables, custom Montserrat headings, and Instrument Sans body typography without external UI libraries. We integrated dynamic horizontal scrolling marquee animations, rotating comparison chevrons, and interactive accordions to bring the interface to life. Additionally, we implemented custom pulsing CSS skeleton loaders and local error recovery cards with "Retry" buttons for all API requests to ensure a resilient, premium user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## APIs Used
+We integrated the **JSONPlaceholder Posts API** (`https://jsonplaceholder.typicode.com/posts`) in two components:
+1. **FAQ Section** (`FAQAndFooter`): Fetches 5 items dynamically, mapping post titles to questions and post bodies to answers.
+2. **Why Choose Whistle** (`ResultsAndWhy`): Fetches 4 post records to populate the benefits card grid dynamically.
 
-## React Compiler
+Both components manage the request lifecycle with state hooks (`useState` and `useEffect`) showing a loading skeleton while fetching, and rendering user-friendly error banners if a network error occurs.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Structure
+```text
+src/
+├── assets/             # Images, PNG and SVG assets
+├── components/         # Reusable React components
+│   ├── Header          # Brand header and call action button
+│   ├── PromoBar        # Top price alert banner
+│   ├── Hero            # Hero text and dental aligner presentation
+│   ├── ScanBooking     # Interactive gaps question form and Clove Dental referral card
+│   ├── ProductFeatures # Infinite marquee benefits banner and Whistle Aligner pricing card
+│   ├── ResultsAndWhy   # Real Results (before/after) and Why Choose Whistle cards (API-powered)
+│   ├── WhistleDifference # 3D scanning, laser, and pricing detail grids
+│   ├── WhistleApart    # Interactive Whistle vs Other Brands comparison table
+│   ├── StepsAndDoctor  # Numbered step card video block and Doctor-led referral section
+│   ├── FAQAndFooter    # FAQ accordions (API-powered) and dark contact footer
+│   └── FixedBottomBar  # Fixed sticky CTA actions bar at viewport bottom
+├── App.jsx             # Main layouts assembly
+├── index.css           # Global design system variables, resets, and typography
+└── main.jsx            # Application entrypoint
+```
 
-## Expanding the ESLint configuration
+## Setup & Running Instructions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Clone the repository and navigate to the directory
+```bash
+git clone https://github.com/BDX-Bisht/unbundl_frontend_assessment.git
+cd unbundl_frontend_assessment
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Run the development server
+```bash
+npm run dev
+```
+The site will run locally at `http://localhost:5173/`.
+
+### 4. Build for production
+```bash
+npm run build
+```
+This will compile assets and output static files into the `dist/` directory.
