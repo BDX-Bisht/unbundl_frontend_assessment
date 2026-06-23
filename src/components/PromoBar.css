@@ -1,0 +1,35 @@
+.promo-bar {
+  background: linear-gradient(90deg, #CFF0C4 0%, #C7E0F2 100%);
+  padding: 8px 16px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.promo-text {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+  margin: 0;
+}
+
+.promo-original-price {
+  text-decoration: line-through;
+  color: #6b7280;
+  /* muted grey */
+  margin-right: 4px;
+}
+
+.promo-discount-price {
+  font-weight: 700;
+  color: #111827;
+  /* bold/dark discount price */
+}
+
+@media (max-width: 768px) {
+  .promo-text {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}

@@ -1,0 +1,72 @@
+.whistle-header {
+  width: 100%;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  height: 48px;
+  /* Restrict height so it is crisp and matches header proportions */
+  width: auto;
+  object-fit: contain;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.call-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #8e66f4;
+  /* Whistle brand purple */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.call-btn:hover {
+  transform: scale(1.08);
+  opacity: 0.95;
+}
+
+.call-btn:active {
+  transform: scale(0.95);
+}
+
+.phone-icon-svg {
+  width: 44px;
+  height: 44px;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 12px 16px;
+  }
+
+  .header-logo {
+    height: 38px;
+  }
+
+  .phone-icon-svg {
+    width: 36px;
+    height: 36px;
+  }
+}

@@ -1,0 +1,132 @@
+.whistle-hero {
+  width: 100%;
+  background: #F6F3FC;
+  background-size: 60px 60px, 120px 120px, 120px 120px;
+  padding: 40px 32px 0 32px;
+  /* Bottom padding 0 as image sits on the boundary */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 40px;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+.hero-title {
+  font-family: var(--font-montserrat);
+  font-size: 52px;
+  font-weight: 800;
+  /* Extra bold for "Invisible Aligners for a dream smile" */
+  line-height: 1.15;
+  color: #1f2937;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-family: var(--font-instrument);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #4b5563;
+  margin: 0;
+}
+
+.hero-subtitle .purple-text {
+  color: #8e66f4;
+  font-weight: 700;
+}
+
+.hero-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.hero-image {
+  max-width: 100%;
+  max-height: 380px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transform: translateY(6px);
+  /* Align perfectly with bottom of hero frame */
+  transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+  transform: translateY(2px) scale(1.01);
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+  }
+
+  .hero-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .whistle-hero {
+    padding: 32px 20px 0 20px;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+    padding-bottom: 0;
+    gap: 16px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+
+    br {
+      display: none;
+      /* remove line break on mobile for better wrapping */
+    }
+  }
+
+  .hero-image-wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-image {
+    max-height: 260px;
+  }
+}
