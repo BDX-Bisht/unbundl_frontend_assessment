@@ -1,0 +1,290 @@
+.whistle-apart-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 80px 32px;
+  box-sizing: border-box;
+}
+
+.apart-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.apart-heading {
+  font-family: var(--font-montserrat);
+  font-size: 38px;
+  font-weight: 800; /* Extra bold */
+  color: #08060d;
+  text-align: center;
+  margin-bottom: 48px;
+  letter-spacing: -0.02em;
+}
+
+/* Apart Table layout */
+.apart-table {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1.5px solid #f1f5f9;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Row */
+.table-header-row {
+  display: flex;
+  background-color: #ffffff;
+  border-bottom: 1.5px solid #f1f5f9;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.header-cell {
+  padding: 24px 32px;
+  font-family: var(--font-montserrat);
+  font-size: 18px;
+  font-weight: 800; /* Extra bold column headings */
+  color: #08060d;
+  box-sizing: border-box;
+}
+
+.header-cell.col-features {
+  flex: 1.4;
+  text-align: left;
+}
+
+.header-cell.col-whistle {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whistle-header-logo {
+  max-height: 28px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-cell.col-other {
+  flex: 1;
+  text-align: center;
+}
+
+/* Column Highlight Highlight */
+.highlighted-column {
+  background-color: #f0f7ff !important; /* Soft baby blue background highlighted column */
+}
+
+/* Body Rows */
+.table-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-row-group {
+  border-bottom: 1.5px solid #f1f5f9;
+  transition: background-color 0.2s;
+}
+
+.table-row-group:last-child {
+  border-bottom: none;
+}
+
+.table-row {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.table-row:hover {
+  background-color: #fafbfd;
+}
+
+.table-cell {
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.table-cell.col-features {
+  flex: 1.4;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.feature-name-text {
+  font-family: var(--font-instrument);
+  font-size: 16px;
+  font-weight: 700;
+  color: #08060d;
+}
+
+.chevron-icon {
+  width: 18px;
+  height: 18px;
+  color: #9ca3af;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.table-row:hover .chevron-icon {
+  color: #8e66f4;
+}
+
+.chevron-rotated {
+  transform: rotate(180deg);
+}
+
+.table-cell.col-whistle {
+  flex: 1;
+}
+
+.table-cell.col-other {
+  flex: 1;
+}
+
+.text-val {
+  font-family: var(--font-instrument);
+  font-size: 15px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.col-whistle .text-val {
+  color: #08060d;
+  font-weight: 700;
+}
+
+/* Check and Cross Badges */
+.icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.check-badge {
+  background-color: #d1fae5;
+  color: #10b981;
+}
+
+.cross-badge {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+
+.badge-svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Accordion details dropdown */
+.row-detail-dropdown {
+  background-color: #fafbfc;
+  border-top: 1.5px solid #f8fafc;
+  overflow: hidden;
+  animation: slide-down 0.2s ease-out;
+}
+
+.detail-inner {
+  padding: 20px 48px;
+  box-sizing: border-box;
+}
+
+.detail-description {
+  font-family: var(--font-instrument);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0;
+  text-align: left;
+}
+
+@keyframes slide-down {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 200px;
+    opacity: 1;
+  }
+}
+
+/* Responsive Table layout */
+@media (max-width: 768px) {
+  .apart-heading {
+    font-size: 30px;
+    margin-bottom: 32px;
+  }
+  
+  .header-cell, .table-cell {
+    padding: 16px 20px;
+  }
+  
+  .feature-name-text {
+    font-size: 14px;
+  }
+
+  .text-val {
+    font-size: 13.5px;
+  }
+
+  .detail-inner {
+    padding: 16px 20px;
+  }
+  
+  .detail-description {
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .whistle-apart-section {
+    padding: 60px 16px;
+  }
+  
+  .apart-heading {
+    font-size: 26px;
+  }
+
+  .header-cell, .table-cell {
+    padding: 12px 8px;
+  }
+  
+  .header-cell {
+    font-size: 14px;
+  }
+
+  .whistle-header-logo {
+    max-height: 20px;
+  }
+
+  .feature-name-text {
+    font-size: 12px;
+  }
+
+  .text-val {
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  .icon-badge {
+    width: 22px;
+    height: 22px;
+  }
+
+  .badge-svg {
+    width: 12px;
+    height: 12px;
+  }
+}

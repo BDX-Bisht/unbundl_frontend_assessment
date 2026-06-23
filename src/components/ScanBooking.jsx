@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import dentalImg from '../assets/dental.png';
 import './ScanBooking.css';
 

@@ -1,0 +1,129 @@
+.fixed-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  border-top: 1.5px solid #f1f5f9;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+.bottom-bar-container {
+  width: 100%;
+  max-width: 1240px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.bar-text-side {
+  display: flex;
+  align-items: center;
+}
+
+.bar-cta-text {
+  font-family: var(--font-montserrat);
+  font-size: 17px;
+  font-weight: 800; /* Extra bold */
+  color: #08060d;
+  margin: 0;
+}
+
+.bar-actions-side {
+  display: flex;
+  gap: 16px;
+}
+
+.bar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 8px;
+  font-family: var(--font-instrument);
+  font-size: 14.5px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.btn-primary {
+  background-color: #8e66f4;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-secondary {
+  background-color: #f6f3fc;
+  color: #08060d;
+  border: 1.5px solid #e2dbf7;
+}
+
+.btn-secondary:hover {
+  background-color: #ede9f9;
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+  transform: translateY(1px);
+}
+
+/* Offset bottom padding on the body so content is not hidden behind the bar */
+body {
+  padding-bottom: 80px !important;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .fixed-bottom-bar {
+    height: auto;
+    padding: 16px 20px;
+  }
+
+  .bottom-bar-container {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .bar-cta-text {
+    font-size: 15px;
+  }
+
+  .bar-actions-side {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bar-btn {
+    flex: 1;
+    max-width: 220px;
+    height: 44px;
+    font-size: 13.5px;
+    padding: 0 12px;
+  }
+
+  body {
+    padding-bottom: 120px !important;
+  }
+}

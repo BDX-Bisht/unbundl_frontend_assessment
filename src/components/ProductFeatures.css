@@ -1,13 +1,15 @@
 .whistle-product-features {
   width: 100%;
-  background-color: #f3f7fd; /* Soft blue background */
+  background-color: #f3f7fd;
+  /* Soft blue background */
   box-sizing: border-box;
 }
 
 /* Marquee Styles */
 .marquee-banner {
   width: 100%;
-  background: linear-gradient(90deg, #d4ebd5 0%, #d8e7f5 100%); /* Mint green to light blue gradient */
+  background: linear-gradient(90deg, #d4ebd5 0%, #d8e7f5 100%);
+  /* Mint green to light blue gradient */
   padding: 12px 0;
   overflow: hidden;
   box-sizing: border-box;
@@ -55,6 +57,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -80,7 +83,8 @@
 .features-heading {
   font-family: var(--font-montserrat);
   font-size: 42px;
-  font-weight: 800; /* Extra bold */
+  font-weight: 800;
+  /* Extra bold */
   line-height: 1.18;
   color: #08060d;
   margin-bottom: 24px;
@@ -154,6 +158,7 @@
   font-size: 28px;
   font-weight: 800;
   color: #8e66f4;
+  margin-left: 6px;
 }
 
 .taxes-muted {
@@ -207,7 +212,8 @@
 .check-icon {
   width: 18px;
   height: 18px;
-  color: #34d399; /* Emerald Green */
+  color: #34d399;
+  /* Emerald Green */
   margin-right: 8px;
   flex-shrink: 0;
 }

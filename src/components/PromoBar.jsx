@@ -1,4 +1,3 @@
-import React from 'react';
 import './PromoBar.css';
 
 export default function PromoBar() {

@@ -1,4 +1,3 @@
-import React from 'react';
 import productImg from '../assets/product1.png';
 import './ProductFeatures.css';
 

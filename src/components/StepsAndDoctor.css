@@ -1,0 +1,306 @@
+.whistle-steps-doctor-section {
+  width: 100%;
+  background-color: #eef5fc; /* Soft sky blue background */
+  padding: 80px 32px 0 32px; /* Bottom padding 0 as doctor graphic sits on bottom edge */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.steps-container {
+  max-width: 1240px;
+  margin: 0 auto 96px auto;
+  box-sizing: border-box;
+}
+
+/* Steps White Card */
+.steps-card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 64px 48px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  box-sizing: border-box;
+}
+
+.steps-content-side {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  text-align: left;
+}
+
+.steps-main-heading {
+  font-family: var(--font-montserrat);
+  font-size: 38px;
+  font-weight: 800; /* Extra bold */
+  color: #08060d;
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 24px;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.step-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #f0f7ff;
+  color: #8e66f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-montserrat);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.step-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.step-title {
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 800;
+  color: #08060d;
+  margin: 0;
+}
+
+.step-description {
+  font-family: var(--font-instrument);
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Video Frame Side */
+.steps-video-side {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-player-wrapper {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.video-thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #8e66f4;
+  box-shadow: 0 4px 15px rgba(142, 102, 244, 0.15);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.video-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  background-color: #ffffff;
+}
+
+.play-triangle-svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 2px;
+}
+
+/* Doctor Led container */
+.doctor-led-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.doctor-led-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 48px;
+}
+
+.doctor-led-text-side {
+  flex: 1.1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 64px;
+}
+
+.doctor-main-heading {
+  font-family: var(--font-montserrat);
+  font-size: 40px;
+  font-weight: 800; /* Extra bold */
+  color: #08060d;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.doctor-description {
+  font-family: var(--font-instrument);
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0;
+}
+
+.callback-btn {
+  height: 52px;
+  border: none;
+  border-radius: 8px;
+  background-color: #8e66f4;
+  color: #ffffff;
+  font-family: var(--font-instrument);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 0 36px;
+  cursor: pointer;
+  width: fit-content;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.callback-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.callback-btn:active {
+  transform: translateY(1px);
+}
+
+.doctor-led-image-side {
+  flex: 0.9;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.doctor-graphic-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transform: translateY(4px); /* aligns perfectly on the section boundary */
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .steps-card {
+    flex-direction: column;
+    padding: 40px 32px;
+    gap: 40px;
+  }
+
+  .steps-content-side {
+    width: 100%;
+  }
+
+  .steps-main-heading {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .steps-grid {
+    gap: 24px;
+  }
+
+  .doctor-main-heading {
+    font-size: 32px;
+  }
+
+  .doctor-description {
+    font-size: 14.5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .whistle-steps-doctor-section {
+    padding: 60px 16px 0 16px;
+  }
+
+  .steps-container {
+    margin-bottom: 64px;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .doctor-led-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .doctor-led-text-side {
+    padding-bottom: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .doctor-led-image-side {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .doctor-graphic-img {
+    max-height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .steps-main-heading {
+    font-size: 26px;
+  }
+  
+  .doctor-main-heading {
+    font-size: 26px;
+  }
+
+  .video-player-wrapper {
+    width: 280px;
+    height: 280px;
+  }
+}

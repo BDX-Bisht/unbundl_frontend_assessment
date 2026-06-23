@@ -1,0 +1,148 @@
+.whistle-difference-section {
+  width: 100%;
+  background-color: #eef5fc; /* Soft sky blue background */
+  padding: 80px 32px;
+  box-sizing: border-box;
+}
+
+.difference-container {
+  display: flex;
+  max-width: 1240px;
+  margin: 0 auto;
+  gap: 32px;
+  align-items: stretch; /* Cards will be equal height */
+  box-sizing: border-box;
+}
+
+/* Left Card */
+.difference-card {
+  flex: 1.1;
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.difference-heading {
+  font-family: var(--font-montserrat);
+  font-size: 38px;
+  font-weight: 800; /* Extra bold */
+  color: #08060d;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.difference-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.difference-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.feature-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon-img {
+  width: 100%;
+  height: auto;
+  max-height: 48px;
+  object-fit: contain;
+}
+
+.feature-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.feature-title {
+  font-family: var(--font-montserrat);
+  font-size: 18px;
+  font-weight: 800; /* Extra bold headings */
+  color: #08060d;
+  margin: 0;
+}
+
+.feature-description {
+  font-family: var(--font-instrument);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Right Card */
+.difference-image-card {
+  flex: 0.9;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+.difference-graphic-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 24px;
+}
+
+/* Responsiveness */
+@media (max-width: 968px) {
+  .difference-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .difference-card {
+    padding: 32px;
+  }
+  
+  .difference-heading {
+    font-size: 30px;
+  }
+  
+  .difference-image-card {
+    height: 380px;
+  }
+}
+
+@media (max-width: 600px) {
+  .whistle-difference-section {
+    padding: 60px 16px;
+  }
+  
+  .difference-heading {
+    font-size: 26px;
+  }
+  
+  .difference-feature-item {
+    gap: 16px;
+  }
+  
+  .feature-icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .difference-image-card {
+    height: 300px;
+  }
+}
